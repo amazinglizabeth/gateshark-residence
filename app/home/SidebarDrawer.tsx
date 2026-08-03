@@ -192,7 +192,7 @@ const styles: Record<string, React.CSSProperties> = {
     height: '100%',
     backgroundColor: '#ffffff',
     color: '#0f172a',
-    padding: '32px 20px',
+    padding: 'calc(48px + env(safe-area-inset-top, 0px)) 20px 32px 20px',
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',

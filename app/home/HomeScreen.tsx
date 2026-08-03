@@ -297,14 +297,14 @@ const styles: Record<string, React.CSSProperties> = {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    padding: 'calc(12px + env(safe-area-inset-top, 0px)) 20px calc(30px + env(safe-area-inset-bottom, 0px))',
+    padding: 'calc(2px + env(safe-area-inset-top, 0px)) 20px calc(24px + env(safe-area-inset-bottom, 0px))',
     boxSizing: 'border-box',
   },
   topBar: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: '14px',
+    marginBottom: '8px',
   },
   hamburgerBtn: {
     background: 'none',
@@ -353,7 +353,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   greetingSection: {
     textAlign: 'left',
-    marginBottom: '24px',
+    marginBottom: '12px',
   },
   greetingText: {
     fontSize: '32px',
