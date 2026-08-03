@@ -24,7 +24,7 @@ export function App() {
 
   const [step, setStep] = useState<AppStep>(() => {
     const savedStep = localStorage.getItem('gateshark_step') as AppStep;
-    return savedStep || 'home'; // Default to home if logged in, or saved state
+    return savedStep || 'onboarding'; // Default to onboarding screen after splash screen
   })
 
   const [userEmail, setUserEmail] = useState(() => {
