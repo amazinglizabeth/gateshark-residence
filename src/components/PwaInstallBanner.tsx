@@ -79,24 +79,26 @@ export const PwaInstallBanner: React.FC = () => {
   }
 
   return (
-    <div style={styles.bannerContainer}>
-      <div style={styles.bannerContent}>
-        <div style={styles.iconWrapper}>
-          <img src="/gateshark-icon-192.png" alt="Gateshark Icon" style={styles.appIcon} />
-        </div>
-        <div style={styles.textContainer}>
-          <div style={styles.title}>Install Gateshark App</div>
-          <div style={styles.subtitle}>
-            Add to Home Screen to launch without browser UI
+    <>
+      <div style={styles.bannerContainer}>
+        <div style={styles.bannerContent}>
+          <div style={styles.iconWrapper}>
+            <img src="/gateshark-icon-192.png" alt="Gateshark Icon" style={styles.appIcon} />
           </div>
-        </div>
-        <div style={styles.actions}>
-          <button style={styles.installBtn} onClick={handleInstallClick}>
-            {isIOS ? 'Instructions' : 'Add to Home'}
-          </button>
-          <button style={styles.closeBtn} onClick={handleDismiss} aria-label="Close">
-            ✕
-          </button>
+          <div style={styles.textContainer}>
+            <div style={styles.title}>Install Gateshark App</div>
+            <div style={styles.subtitle}>
+              Add to Home Screen to launch without browser UI
+            </div>
+          </div>
+          <div style={styles.actions}>
+            <button style={styles.installBtn} onClick={handleInstallClick}>
+              {isIOS ? 'Instructions' : 'Add to Home'}
+            </button>
+            <button style={styles.closeBtn} onClick={handleDismiss} aria-label="Close">
+              ✕
+            </button>
+          </div>
         </div>
       </div>
 
@@ -119,7 +121,7 @@ export const PwaInstallBanner: React.FC = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
@@ -204,44 +206,49 @@ const styles: Record<string, React.CSSProperties> = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    backgroundColor: 'rgba(15, 23, 42, 0.85)',
+    backdropFilter: 'blur(4px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '20px',
-    zIndex: 10000,
+    padding: '24px',
+    zIndex: 100000,
   },
   modalCard: {
     backgroundColor: '#1e293b',
     color: '#f8fafc',
-    padding: '24px',
-    borderRadius: '16px',
-    maxWidth: '320px',
+    padding: '28px 24px 24px',
+    borderRadius: '20px',
+    maxWidth: '340px',
     width: '100%',
     textAlign: 'left',
     border: '1px solid #334155',
+    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.7)',
+    boxSizing: 'border-box',
   },
   modalTitle: {
     margin: '0 0 16px 0',
-    fontSize: '18px',
+    fontSize: '20px',
     fontWeight: 700,
+    color: '#ffffff',
   },
   modalStep: {
     fontSize: '14px',
     color: '#cbd5e1',
-    marginBottom: '12px',
-    lineHeight: '1.4',
+    marginBottom: '14px',
+    lineHeight: '1.5',
   },
   gotItBtn: {
     width: '100%',
-    backgroundColor: '#6366f1',
+    backgroundColor: '#285843',
     color: '#ffffff',
     border: 'none',
-    borderRadius: '8px',
-    padding: '10px',
-    fontSize: '14px',
-    fontWeight: 600,
+    borderRadius: '10px',
+    padding: '12px',
+    fontSize: '15px',
+    fontWeight: 700,
     cursor: 'pointer',
-    marginTop: '8px',
+    marginTop: '16px',
+    boxShadow: '0 4px 12px rgba(40, 88, 67, 0.3)',
   },
 };
