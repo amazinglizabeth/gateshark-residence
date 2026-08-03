@@ -156,8 +156,8 @@ const styles: Record<string, React.CSSProperties> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 'calc(10px + env(safe-area-inset-top, 0px))',
-    marginBottom: '20px',
+    paddingTop: 'calc(4px + env(safe-area-inset-top, 0px))',
+    marginBottom: '16px',
     width: '100%',
   },
   brandWrapper: {

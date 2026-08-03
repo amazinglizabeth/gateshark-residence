@@ -18,13 +18,16 @@ type AppStep = 'onboarding' | 'signup' | 'login' | 'forgot-password' | 'check-em
 
 export function App() {
   const [showSplash, setShowSplash] = useState(() => {
-    // Only show splash screen if fresh session or no saved step
-    return !localStorage.getItem('gateshark_step');
+    // Show splash screen if user is not logged in or fresh session
+    const isLoggedIn = localStorage.getItem('gateshark_logged_in') === 'true';
+    return !isLoggedIn;
   })
 
   const [step, setStep] = useState<AppStep>(() => {
     const savedStep = localStorage.getItem('gateshark_step') as AppStep;
-    return savedStep || 'onboarding'; // Default to onboarding screen after splash screen
+    const isLoggedIn = localStorage.getItem('gateshark_logged_in') === 'true';
+    if (savedStep) return savedStep;
+    return isLoggedIn ? 'home' : 'onboarding';
   })
 
   const [userEmail, setUserEmail] = useState(() => {
@@ -58,6 +61,7 @@ export function App() {
 
   const handleLoginSuccess = (email: string) => {
     setUserEmail(email)
+    localStorage.setItem('gateshark_logged_in', 'true');
     setStep('home')
   }
 
@@ -66,12 +70,15 @@ export function App() {
   }
 
   const handleGoHome = () => {
+    localStorage.setItem('gateshark_logged_in', 'true');
     setStep('home')
   }
 
   const handleLogout = () => {
+    localStorage.removeItem('gateshark_logged_in');
     localStorage.removeItem('gateshark_step');
     localStorage.removeItem('gateshark_email');
+    setShowSplash(true);
     setStep('onboarding');
   }
 

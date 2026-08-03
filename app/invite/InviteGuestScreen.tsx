@@ -73,7 +73,7 @@ const styles: Record<string, React.CSSProperties> = {
     width: '100%',
     maxWidth: '440px',
     minHeight: '100vh',
-    padding: '20px 24px 100px',
+    padding: '10px 24px 100px',
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',

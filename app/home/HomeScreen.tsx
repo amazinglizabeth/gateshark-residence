@@ -297,14 +297,14 @@ const styles: Record<string, React.CSSProperties> = {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    padding: 'calc(20px + env(safe-area-inset-top, 0px)) 20px calc(40px + env(safe-area-inset-bottom, 0px))',
+    padding: 'calc(12px + env(safe-area-inset-top, 0px)) 20px calc(30px + env(safe-area-inset-bottom, 0px))',
     boxSizing: 'border-box',
   },
   topBar: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: '28px',
+    marginBottom: '14px',
   },
   hamburgerBtn: {
     background: 'none',
